@@ -1,1 +1,58 @@
-Hello World
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Stop Sign App</title>
+  <meta name="description" content="Stop">
+
+    <style>
+        div {
+            width: 100%;
+            height: 100%;
+        }
+
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 500px;
+            height: 500px;
+            margin-top: -250px; /* Half the height */
+            margin-left: -250px; /* Half the width */
+        }
+    </style>
+
+</head>
+
+<body>
+<div id="stop_div">
+    <img src="https://i.postimg.cc/FKLPdXpz/stop-sign.png" alt="Stop" onclick="document.getElementById('stop_div').webkitRequestFullScreen()">
+</div>
+  <script>
+    
+
+    var kInterval = 800;
+    var is_red = true;
+
+    document.getElementById('stop_div').style.backgroundColor = "red";
+    document.body.style.backgroundColor = "red";
+
+    setInterval(function(){
+        if (is_red){
+            document.getElementById('stop_div').style.backgroundColor = "white";
+            document.body.style.backgroundColor = "white";
+        } else {
+            document.getElementById('stop_div').style.backgroundColor = "red";
+            document.body.style.backgroundColor = "red";
+        }
+        is_red = !is_red
+    }, kInterval)
+
+
+
+
+  </script>
+</body>
+</html>
